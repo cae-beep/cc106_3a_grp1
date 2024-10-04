@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.budgettracker.ExpenseModel;
-
 public class MyDbAdapter {
     private MyDbHelper dbHelper;
 
@@ -58,9 +56,5 @@ public class MyDbAdapter {
             cursor.close();
         }
         return exists;
-    }
-
-    public long insertExpense(ExpenseModel expenseModel) {
-        return 0;
     }
 }
