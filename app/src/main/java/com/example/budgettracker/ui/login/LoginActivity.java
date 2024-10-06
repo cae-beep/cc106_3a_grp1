@@ -8,7 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.budgettracker.MainActivity;
+
+import com.example.budgettracker.BottomNavigationActivity;
 import com.example.budgettracker.R;
 import com.example.budgettracker.data.MyDbAdapter;
 import com.example.budgettracker.ui.signup.SignUpActivity;
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check credentials using MyDbAdapter
         if (myDbAdapter.checkUserCredentials(enteredUsername, enteredPassword)) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, BottomNavigationActivity.class));
             finish();
         } else {
             showToast("Invalid username or password");

@@ -10,4 +10,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be &gt;5 characters</string>
     <string name="login_failed">Login failed</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Statistics</string>
+    <string name="title_notifications">Profile</string>
+    <string name="expense">EXPENSE</string>
+    <string name="income">INCOME</string>
 </resources>

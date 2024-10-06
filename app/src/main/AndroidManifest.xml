@@ -12,30 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BudgetTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!-- Set LoginActivity as the launcher activity -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login">
-            <intent-filter>
+<!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!-- SignUpActivity will be accessible but not the launcher -->
-        <activity
-            android:name=".ui.signup.SignUpActivity"
-            android:exported="true"
-            android:label="@string/title_activity_sign_up">
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            </intent-filter>>>-->
         </activity>
 
     </application>
-
 </manifest>
