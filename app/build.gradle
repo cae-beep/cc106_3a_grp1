@@ -1,9 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
 }
-configurations.implementation {
-    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
-}
 
 android {
     namespace 'com.example.budgettracker'
@@ -25,17 +22,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         viewBinding true
     }
 }
 
 dependencies {
-
+    // Core Android libraries
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
@@ -43,7 +42,16 @@ dependencies {
     implementation libs.annotation
     implementation libs.lifecycle.livedata.ktx
     implementation libs.lifecycle.viewmodel.ktx
+
+    // Testing libraries
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    // Navigation Component dependencies (updated to latest stable version)
+    implementation 'androidx.navigation:navigation-fragment:2.7.1'
+    implementation 'androidx.navigation:navigation-ui:2.7.1'
+
+    // Material Design library (if not already included in libs.material)
+    implementation 'com.google.android.material:material:1.9.0'
 }
