@@ -12,6 +12,7 @@ public class MyDbAdapter {
         dbHelper = new MyDbHelper(context);
     }
 
+    // Method to insert a new user
     public long insertUser(String username, String password) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -26,6 +27,7 @@ public class MyDbAdapter {
         return db.insert(MyDbHelper.TABLE_USERS, null, contentValues);
     }
 
+    // Method to check user credentials during login
     public boolean checkUserCredentials(String username, String password) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(MyDbHelper.TABLE_USERS,
@@ -44,6 +46,7 @@ public class MyDbAdapter {
         return isValid;
     }
 
+    // Method to check if the user already exists in the database
     public boolean checkUserExists(String username) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(MyDbHelper.TABLE_USERS,
@@ -56,5 +59,16 @@ public class MyDbAdapter {
             cursor.close();
         }
         return exists;
+    }
+
+    // New method to insert an expense
+    public long insertExpense(double amount, String note, String category) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("amount", amount);
+        contentValues.put("note", note);
+        contentValues.put("category", category);
+
+        return db.insert("expenses", null, contentValues);
     }
 }
